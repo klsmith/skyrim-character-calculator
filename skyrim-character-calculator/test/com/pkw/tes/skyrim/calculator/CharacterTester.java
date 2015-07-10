@@ -10,56 +10,56 @@ import org.junit.Test;
 
 public class CharacterTester {
 
-    private Character character;
+    private Character nordCharacter;
 
     @Before
     public void setup() {
-        this.character = Character.create(Race.NORD);
+        this.nordCharacter = Character.create(Race.NORD);
     }
 
     @Test
     public void testLevelNordSmithing() {
-        character.skill(SMITHING).levelUp();
-        int actual = character.skill(SMITHING).currentLevel();
+        nordCharacter.skill(SMITHING).levelUp();
+        int actual = nordCharacter.skill(SMITHING).currentLevel();
         int expected = 21;
         assertEquals(expected, actual);
     }
 
     @Test
     public void testLevelNordAlteration() {
-        character.skill(ALTERATION).levelUp();
-        int actual = character.skill(ALTERATION).currentLevel();
+        nordCharacter.skill(ALTERATION).levelUp();
+        int actual = nordCharacter.skill(ALTERATION).currentLevel();
         int expected = 16;
         assertEquals(expected, actual);
     }
 
     @Test
     public void testLevelNordAlterationTwice() {
-        character.skill(ALTERATION).addLevel(2);
-        int actual = character.skill(ALTERATION).currentLevel();
+        nordCharacter.skill(ALTERATION).addLevel(2);
+        int actual = nordCharacter.skill(ALTERATION).currentLevel();
         int expected = 17;
         assertEquals(expected, actual);
     }
 
     @Test
     public void testNordXpToLevel2Is100() {
-        int actual = character.xpForNextLevel();
+        int actual = nordCharacter.xpForNextLevel();
         int expected = 100;
         assertEquals(expected, actual);
     }
 
     @Test
     public void testLevelNordTwoHandedTwiceXpIs81() {
-        character.skill(TWO_HANDED).addLevel(2);
-        int actual = character.currentXp();
+        nordCharacter.skill(TWO_HANDED).addLevel(2);
+        int actual = nordCharacter.currentXp();
         int expected = 53;
         assertEquals(expected, actual);
     }
 
     @Test
     public void testLevelNordTwoHandedFourTimesLevelsCharacter() {
-        character.skill(TWO_HANDED).addLevel(4);
-        int actual = character.currentLevel();
+        nordCharacter.skill(TWO_HANDED).addLevel(4);
+        int actual = nordCharacter.currentLevel();
         int expected = 2;
         assertEquals(expected, actual);
     }
