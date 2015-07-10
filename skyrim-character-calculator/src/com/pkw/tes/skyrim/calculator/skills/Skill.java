@@ -1,7 +1,9 @@
-package com.pkw.tes.skyrim.calculator;
+package com.pkw.tes.skyrim.calculator.skills;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.pkw.tes.skyrim.calculator.perks.PerkTree;
 
 public class Skill {
 

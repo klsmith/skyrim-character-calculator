@@ -1,28 +1,29 @@
 package com.pkw.tes.skyrim.calculator;
 
-import static com.pkw.tes.skyrim.calculator.Skill.Type.ALCHEMY;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.ALTERATION;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.ARCHERY;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.BLOCK;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.CONJURATION;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.DESTRUCTION;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.ENCHANTING;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.HEAVY_ARMOR;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.ILLUSION;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.LIGHT_ARMOR;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.LOCKPICKING;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.ONE_HANDED;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.PICKPOCKET;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.RESTORATION;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.SMITHING;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.SNEAK;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.SPEECH;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.TWO_HANDED;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.ALCHEMY;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.ALTERATION;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.ARCHERY;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.BLOCK;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.CONJURATION;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.DESTRUCTION;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.ENCHANTING;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.HEAVY_ARMOR;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.ILLUSION;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.LIGHT_ARMOR;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.LOCKPICKING;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.ONE_HANDED;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.PICKPOCKET;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.RESTORATION;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.SMITHING;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.SNEAK;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.SPEECH;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.TWO_HANDED;
 
 import java.util.Arrays;
 import java.util.List;
 
-import com.pkw.tes.skyrim.calculator.Skill.Type;
+import com.pkw.tes.skyrim.calculator.skills.SkillMap;
+import com.pkw.tes.skyrim.calculator.skills.Skill.Type;
 
 public enum Race {
 

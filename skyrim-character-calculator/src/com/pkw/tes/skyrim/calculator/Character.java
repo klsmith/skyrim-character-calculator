@@ -1,6 +1,9 @@
 package com.pkw.tes.skyrim.calculator;
 
-import com.pkw.tes.skyrim.calculator.Skill.Type;
+import com.pkw.tes.skyrim.calculator.skills.OnSkillLevelListener;
+import com.pkw.tes.skyrim.calculator.skills.Skill;
+import com.pkw.tes.skyrim.calculator.skills.SkillMap;
+import com.pkw.tes.skyrim.calculator.skills.Skill.Type;
 
 public class Character {
 

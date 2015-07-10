@@ -1,4 +1,6 @@
-package com.pkw.tes.skyrim.calculator;
+package com.pkw.tes.skyrim.calculator.skills;
+
+import com.pkw.tes.skyrim.calculator.Character;
 
 public class OnSkillLevelListener {
 

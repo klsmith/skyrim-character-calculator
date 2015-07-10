@@ -1,7 +1,7 @@
 package com.pkw.tes.skyrim.calculator;
 
-import static com.pkw.tes.skyrim.calculator.IllusionPerkType.NOVICE_ILLUSION;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.ILLUSION;
+import static com.pkw.tes.skyrim.calculator.perks.IllusionPerkType.NOVICE_ILLUSION;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.ILLUSION;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;

@@ -1,8 +1,8 @@
 package com.pkw.tes.skyrim.calculator;
 
-import static com.pkw.tes.skyrim.calculator.Skill.Type.ALTERATION;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.SMITHING;
-import static com.pkw.tes.skyrim.calculator.Skill.Type.TWO_HANDED;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.ALTERATION;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.SMITHING;
+import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.TWO_HANDED;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;

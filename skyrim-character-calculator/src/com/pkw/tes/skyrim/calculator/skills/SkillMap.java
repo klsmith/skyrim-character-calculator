@@ -1,10 +1,11 @@
-package com.pkw.tes.skyrim.calculator;
+package com.pkw.tes.skyrim.calculator.skills;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import com.pkw.tes.skyrim.calculator.Skill.Type;
+import com.pkw.tes.skyrim.calculator.Race;
+import com.pkw.tes.skyrim.calculator.skills.Skill.Type;
 
 public class SkillMap {
 

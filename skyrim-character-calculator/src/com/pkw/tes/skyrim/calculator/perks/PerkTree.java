@@ -1,4 +1,5 @@
-package com.pkw.tes.skyrim.calculator;
+package com.pkw.tes.skyrim.calculator.perks;
+
 
 public class PerkTree {
 
