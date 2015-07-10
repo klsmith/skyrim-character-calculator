@@ -10,13 +10,34 @@ public class SkillMap {
 
     private Map<Type, Skill> map;
 
-    public static SkillMap getInstance() {
-        return new SkillMap();
+    public static SkillMap createFor(Race race) {
+        return new SkillMap(race);
     }
 
-    private SkillMap() {
+    private SkillMap(Race race) {
         super();
         map = new HashMap<>();
+        addPrimarySkill(race);
+        addFavoredSkills(race);
+        fillInBaseSkills();
+    }
+
+    private void addPrimarySkill(Race race) {
+        add(Skill.primaryLevel(race.primarySkill()));
+    }
+
+    private void addFavoredSkills(Race race) {
+        for (Type type : race.favoredSkills()) {
+            add(Skill.favoredLevel(type));
+        }
+    }
+
+    private void fillInBaseSkills() {
+        for (Type type : Type.values()) {
+            if (!has(type)) {
+                add(Skill.baseLevel(type));
+            }
+        }
     }
 
     public void add(Skill skill) {

@@ -168,24 +168,10 @@ public enum Race {
     }
 
     public final SkillMap initalSkills() {
-        SkillMap skills = SkillMap.getInstance();
-        skills.add(Skill.primaryLevel(primarySkill()));
-        for (Type type : favoredSkills()) {
-            skills.add(Skill.favoredLevel(type));
-        }
-        return fillInRemainingSkills(skills);
+        return SkillMap.createFor(this);
     }
 
     public abstract Type primarySkill();
 
     public abstract List<Type> favoredSkills();
-
-    private static SkillMap fillInRemainingSkills(SkillMap skillMap) {
-        for (Type type : Type.values()) {
-            if (!skillMap.has(type)) {
-                skillMap.add(Skill.baseLevel(type));
-            }
-        }
-        return skillMap;
-    }
 }
