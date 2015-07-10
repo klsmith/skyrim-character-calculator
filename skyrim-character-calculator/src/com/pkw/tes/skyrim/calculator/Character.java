@@ -50,4 +50,8 @@ public class Character {
     public int currentLevel() {
         return level;
     }
+
+    public int perkPoints() {
+        return level - 1;
+    }
 }

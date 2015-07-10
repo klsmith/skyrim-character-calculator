@@ -75,4 +75,8 @@ public class Skill {
             ALTERATION, //
             ENCHANTING;
     }
+
+    public PerkTree perkTree() {
+        return null;
+    }
 }
