@@ -1,14 +1,12 @@
 package com.pkw.tes.skyrim.calculator;
 
-import java.util.Map;
-
 import com.pkw.tes.skyrim.calculator.Skill.Type;
 
 public class Character {
 
     private int xp;
     private int level;
-    private Map<Skill.Type, Skill> skills;
+    private SkillMap skills;
 
     public static Character create(Race race) {
         return new Character(race);
@@ -18,7 +16,7 @@ public class Character {
         xp = 0;
         level = 1;
         skills = race.initalSkills();
-        for (Type type : skills.keySet()) {
+        for (Type type : skills.types()) {
             skills.get(type).addOnSkillLevelListener(OnSkillLevelListener.getFor(this));
         }
     }

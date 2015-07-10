@@ -20,9 +20,7 @@ import static com.pkw.tes.skyrim.calculator.Skill.Type.SPEECH;
 import static com.pkw.tes.skyrim.calculator.Skill.Type.TWO_HANDED;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.pkw.tes.skyrim.calculator.Skill.Type;
 
@@ -169,11 +167,11 @@ public enum Race {
         });
     }
 
-    public final Map<Type, Skill> initalSkills() {
-        Map<Type, Skill> skills = new HashMap<>();
-        skills.put(primarySkill(), Skill.primaryLevel());
+    public final SkillMap initalSkills() {
+        SkillMap skills = SkillMap.getInstance();
+        skills.add(Skill.primaryLevel(primarySkill()));
         for (Type type : favoredSkills()) {
-            skills.put(type, Skill.favoredLevel());
+            skills.add(Skill.favoredLevel(type));
         }
         return fillInRemainingSkills(skills);
     }
@@ -182,12 +180,12 @@ public enum Race {
 
     public abstract List<Type> favoredSkills();
 
-    private static Map<Type, Skill> fillInRemainingSkills(Map<Type, Skill> skills) {
+    private static SkillMap fillInRemainingSkills(SkillMap skillMap) {
         for (Type type : Type.values()) {
-            if (!skills.containsKey(type)) {
-                skills.put(type, Skill.baseLevel());
+            if (!skillMap.has(type)) {
+                skillMap.add(Skill.baseLevel(type));
             }
         }
-        return skills;
+        return skillMap;
     }
 }
