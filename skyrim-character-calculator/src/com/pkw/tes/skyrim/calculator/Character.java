@@ -8,7 +8,7 @@ public class Character {
 
     private int xp;
     private int level;
-    private Map<Skill.Type, Skill> skillMap;
+    private Map<Skill.Type, Skill> skills;
 
     public static Character create(Race race) {
         return new Character(race);
@@ -17,9 +17,9 @@ public class Character {
     private Character(Race race) {
         xp = 0;
         level = 1;
-        skillMap = race.initalSkills();
-        for (Type type : skillMap.keySet()) {
-            skillMap.get(type).addOnLevelListener(OnLevelListener.getFor(this));
+        skills = race.initalSkills();
+        for (Type type : skills.keySet()) {
+            skills.get(type).addOnSkillLevelListener(OnSkillLevelListener.getFor(this));
         }
     }
 
@@ -28,7 +28,7 @@ public class Character {
     }
 
     public Skill getSkill(Type type) {
-        return skillMap.get(type);
+        return skills.get(type);
     }
 
     public void addXp(int amount) {

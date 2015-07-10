@@ -1,14 +1,14 @@
 package com.pkw.tes.skyrim.calculator;
 
-public class OnLevelListener {
+public class OnSkillLevelListener {
 
 	private Character character;
 
-	public static OnLevelListener getFor(Character character) {
-		return new OnLevelListener(character);
+	public static OnSkillLevelListener getFor(Character character) {
+		return new OnSkillLevelListener(character);
 	}
 
-	public OnLevelListener(Character character) {
+	public OnSkillLevelListener(Character character) {
 		this.character = character;
 	}
 

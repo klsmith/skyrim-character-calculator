@@ -8,7 +8,7 @@ public class Skill {
 	private static final int FAVORED_INTITIAL_LEVEL = 20;
 	private static final int BASE_INTITIAL_LEVEL = 15;
 	private int level;
-	private List<OnLevelListener> onLevelListeners;
+	private List<OnSkillLevelListener> onLevelListeners;
 
 	public static Skill primaryLevel() {
 		return new Skill(PRIMARY_INTITIAL_LEVEL);
@@ -29,7 +29,7 @@ public class Skill {
 
 	public void levelUp() {
 		level++;
-		for (OnLevelListener listener : onLevelListeners) {
+		for (OnSkillLevelListener listener : onLevelListeners) {
 			listener.onLevel(this);
 		}
 	}
@@ -59,7 +59,7 @@ public class Skill {
 		ENCHANTING;
 	}
 
-	public void addOnLevelListener(OnLevelListener onLevelListener) {
+	public void addOnSkillLevelListener(OnSkillLevelListener onLevelListener) {
 		onLevelListeners.add(onLevelListener);
 	}
 }
