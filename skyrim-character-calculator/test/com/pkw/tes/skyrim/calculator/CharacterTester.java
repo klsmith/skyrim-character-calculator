@@ -35,16 +35,10 @@ public class CharacterTester {
 
     @Test
     public void testLevelNordAlterationTwice() {
-        levelSkill(character.getSkill(ALTERATION), 2);
+        character.getSkill(ALTERATION).addLevel(2);
         int actual = character.getSkill(ALTERATION).currentLevel();
         int expected = 17;
         assertEquals(expected, actual);
-    }
-
-    private void levelSkill(Skill skill, int times) {
-        for (int i = 0; i < times; i++) {
-            skill.levelUp();
-        }
     }
 
     @Test
@@ -56,7 +50,7 @@ public class CharacterTester {
 
     @Test
     public void testLevelNordTwoHandedTwiceXpIs81() {
-        levelSkill(character.getSkill(TWO_HANDED), 2);
+        character.getSkill(TWO_HANDED).addLevel(2);
         int actual = character.currentXp();
         int expected = 53;
         assertEquals(expected, actual);
@@ -64,7 +58,7 @@ public class CharacterTester {
 
     @Test
     public void testLevelNordTwoHandedFourTimesLevelsCharacter() {
-        levelSkill(character.getSkill(TWO_HANDED), 4);
+        character.getSkill(TWO_HANDED).addLevel(4);
         int actual = character.currentLevel();
         int expected = 2;
         assertEquals(expected, actual);

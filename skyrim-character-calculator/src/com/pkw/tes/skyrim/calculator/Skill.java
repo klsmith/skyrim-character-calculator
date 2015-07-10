@@ -37,6 +37,12 @@ public class Skill {
         }
     }
 
+    public void addLevel(int amount) {
+        for (int i = 0; i < amount; i++) {
+            levelUp();
+        }
+    }
+
     public int currentLevel() {
         return level;
     }

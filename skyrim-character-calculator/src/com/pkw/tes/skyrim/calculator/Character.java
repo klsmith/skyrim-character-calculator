@@ -20,7 +20,11 @@ public class Character {
     }
 
     public void levelUp() {
-        level++;
+        addLevel(1);
+    }
+
+    public void addLevel(int amount) {
+        level += amount;
     }
 
     public Skill getSkill(Type type) {
