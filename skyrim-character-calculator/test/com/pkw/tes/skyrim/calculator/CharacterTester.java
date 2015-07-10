@@ -2,6 +2,7 @@ package com.pkw.tes.skyrim.calculator;
 
 import static com.pkw.tes.skyrim.calculator.Skill.Type.ALTERATION;
 import static com.pkw.tes.skyrim.calculator.Skill.Type.SMITHING;
+import static com.pkw.tes.skyrim.calculator.Skill.Type.TWO_HANDED;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -44,6 +45,29 @@ public class CharacterTester {
         for (int i = 0; i < times; i++) {
             skill.levelUp();
         }
+    }
+
+    @Test
+    public void testNordXpToLevel2Is100() {
+        int actual = character.xpForNextLevel();
+        int expected = 100;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testLevelNordTwoHandedTwiceXpIs81() {
+        levelSkill(character.getSkill(TWO_HANDED), 2);
+        int actual = character.currentXp();
+        int expected = 53;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testLevelNordTwoHandedFourTimesLevelsCharacter() {
+        levelSkill(character.getSkill(TWO_HANDED), 4);
+        int actual = character.currentLevel();
+        int expected = 2;
+        assertEquals(expected, actual);
     }
 
 }

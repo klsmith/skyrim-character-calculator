@@ -33,8 +33,8 @@ public class Character {
 
     public void addXp(int amount) {
         xp += amount;
-        if (amount >= xpForNextLevel()) {
-            amount -= xpForNextLevel();
+        if (xp >= xpForNextLevel()) {
+            xp -= xpForNextLevel();
             levelUp();
         }
     }
@@ -45,5 +45,9 @@ public class Character {
 
     public int xpForNextLevel() {
         return ((level - 1) * 25) + 100;
+    }
+
+    public int currentLevel() {
+        return level;
     }
 }
