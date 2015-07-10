@@ -19,24 +19,24 @@ public class CharacterTester {
 
     @Test
     public void testLevelNordSmithing() {
-        character.getSkill(SMITHING).levelUp();
-        int actual = character.getSkill(SMITHING).currentLevel();
+        character.skill(SMITHING).levelUp();
+        int actual = character.skill(SMITHING).currentLevel();
         int expected = 21;
         assertEquals(expected, actual);
     }
 
     @Test
     public void testLevelNordAlteration() {
-        character.getSkill(ALTERATION).levelUp();
-        int actual = character.getSkill(ALTERATION).currentLevel();
+        character.skill(ALTERATION).levelUp();
+        int actual = character.skill(ALTERATION).currentLevel();
         int expected = 16;
         assertEquals(expected, actual);
     }
 
     @Test
     public void testLevelNordAlterationTwice() {
-        character.getSkill(ALTERATION).addLevel(2);
-        int actual = character.getSkill(ALTERATION).currentLevel();
+        character.skill(ALTERATION).addLevel(2);
+        int actual = character.skill(ALTERATION).currentLevel();
         int expected = 17;
         assertEquals(expected, actual);
     }
@@ -50,7 +50,7 @@ public class CharacterTester {
 
     @Test
     public void testLevelNordTwoHandedTwiceXpIs81() {
-        character.getSkill(TWO_HANDED).addLevel(2);
+        character.skill(TWO_HANDED).addLevel(2);
         int actual = character.currentXp();
         int expected = 53;
         assertEquals(expected, actual);
@@ -58,7 +58,7 @@ public class CharacterTester {
 
     @Test
     public void testLevelNordTwoHandedFourTimesLevelsCharacter() {
-        character.getSkill(TWO_HANDED).addLevel(4);
+        character.skill(TWO_HANDED).addLevel(4);
         int actual = character.currentLevel();
         int expected = 2;
         assertEquals(expected, actual);

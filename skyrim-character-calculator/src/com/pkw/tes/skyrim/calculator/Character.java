@@ -27,7 +27,7 @@ public class Character {
         level += amount;
     }
 
-    public Skill getSkill(Type type) {
+    public Skill skill(Type type) {
         return skillMap.get(type);
     }
 
