@@ -34,4 +34,10 @@ public class SkillMap {
     public Set<Type> types() {
         return map.keySet();
     }
+
+    public void addOnSkillLevelListenerToAll(OnSkillLevelListener listener) {
+        for (Type type : types()) {
+            map.get(type).addOnSkillLevelListener(listener);
+        }
+    }
 }
