@@ -44,6 +44,6 @@ public class Character {
     }
 
     public int xpForNextLevel() {
-        return (level + 3) * 25;
+        return ((level - 1) * 25) + 100;
     }
 }
