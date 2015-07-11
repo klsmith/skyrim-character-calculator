@@ -4,62 +4,56 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import com.pkw.tes.skyrim.calculator.Race;
+import com.pkw.tes.skyrim.calculator.Character;
 import com.pkw.tes.skyrim.calculator.skills.Skill.Type;
 
 public class SkillMap {
 
-    private Map<Type, Skill> map;
+	private Map<Type, Skill> map;
 
-    public static SkillMap createFor(Race race) {
-        return new SkillMap(race);
-    }
+	public static SkillMap createFor(Character character) {
+		return new SkillMap(character);
+	}
 
-    private SkillMap(Race race) {
-        super();
-        map = new HashMap<>();
-        addPrimarySkill(race);
-        addFavoredSkills(race);
-        fillInBaseSkills();
-    }
+	private SkillMap(Character character) {
+		super();
+		map = new HashMap<>();
+		addPrimarySkill(character);
+		addFavoredSkills(character);
+		fillInBaseSkills(character);
+	}
 
-    private void addPrimarySkill(Race race) {
-        add(Skill.primaryLevel(race.primarySkill()));
-    }
+	private void addPrimarySkill(Character character) {
+		add(Skill.primaryLevel(character, character.race().primarySkill()));
+	}
 
-    private void addFavoredSkills(Race race) {
-        for (Type type : race.favoredSkills()) {
-            add(Skill.favoredLevel(type));
-        }
-    }
+	private void addFavoredSkills(Character character) {
+		for (Type type : character.race().favoredSkills()) {
+			add(Skill.favoredLevel(character, type));
+		}
+	}
 
-    private void fillInBaseSkills() {
-        for (Type type : Type.values()) {
-            if (!has(type)) {
-                add(Skill.baseLevel(type));
-            }
-        }
-    }
+	private void fillInBaseSkills(Character character) {
+		for (Type type : Type.values()) {
+			if (!has(type)) {
+				add(Skill.baseLevel(character, type));
+			}
+		}
+	}
 
-    public void add(Skill skill) {
-        map.put(skill.type(), skill);
-    }
+	public void add(Skill skill) {
+		map.put(skill.type(), skill);
+	}
 
-    public Skill get(Type type) {
-        return map.get(type);
-    }
+	public Skill get(Type type) {
+		return map.get(type);
+	}
 
-    public boolean has(Type type) {
-        return map.containsKey(type);
-    }
+	public boolean has(Type type) {
+		return map.containsKey(type);
+	}
 
-    public Set<Type> types() {
-        return map.keySet();
-    }
-
-    public void addOnSkillLevelListenerToAll(OnSkillLevelListener listener) {
-        for (Type type : types()) {
-            map.get(type).addOnSkillLevelListener(listener);
-        }
-    }
+	public Set<Type> types() {
+		return map.keySet();
+	}
 }

@@ -1,8 +1,14 @@
 package com.pkw.tes.skyrim.calculator.perks;
-
+import com.pkw.tes.skyrim.calculator.Character;
 public class Perk {
 
-    public void addPoint() {
+	private Character character;
 
-    }
+	public Perk(Character character) {
+		this.character = character;
+	}
+
+	public void addPoint() {
+		character.usePerkPoint();
+	}
 }

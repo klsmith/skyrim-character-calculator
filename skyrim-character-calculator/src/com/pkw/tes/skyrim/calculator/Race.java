@@ -22,157 +22,159 @@ import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.TWO_HANDED;
 import java.util.Arrays;
 import java.util.List;
 
-import com.pkw.tes.skyrim.calculator.skills.SkillMap;
 import com.pkw.tes.skyrim.calculator.skills.Skill.Type;
 
 public enum Race {
 
-    ALTMER {
+	ALTMER {
 
-        @Override
-        public Type primarySkill() {
-            return ILLUSION;
-        }
+		@Override
+		public Type primarySkill() {
+			return ILLUSION;
+		}
 
-        @Override
-        public List<Type> favoredSkills() {
-            return skillsList(CONJURATION, DESTRUCTION, RESTORATION, ALTERATION, ENCHANTING);
-        }
-    },
+		@Override
+		public List<Type> favoredSkills() {
+			return skillsList(CONJURATION, DESTRUCTION, RESTORATION,
+					ALTERATION, ENCHANTING);
+		}
+	},
 
-    ARGONIAN {
+	ARGONIAN {
 
-        @Override
-        public Type primarySkill() {
-            return LOCKPICKING;
-        }
+		@Override
+		public Type primarySkill() {
+			return LOCKPICKING;
+		}
 
-        @Override
-        public List<Type> favoredSkills() {
-            return skillsList(LIGHT_ARMOR, SNEAK, PICKPOCKET, RESTORATION, ALTERATION);
-        }
-    },
+		@Override
+		public List<Type> favoredSkills() {
+			return skillsList(LIGHT_ARMOR, SNEAK, PICKPOCKET, RESTORATION,
+					ALTERATION);
+		}
+	},
 
-    BOSMER {
+	BOSMER {
 
-        @Override
-        public Type primarySkill() {
-            return ARCHERY;
-        }
+		@Override
+		public Type primarySkill() {
+			return ARCHERY;
+		}
 
-        @Override
-        public List<Type> favoredSkills() {
-            return skillsList(LIGHT_ARMOR, SNEAK, LOCKPICKING, PICKPOCKET, ALCHEMY);
-        }
-    },
+		@Override
+		public List<Type> favoredSkills() {
+			return skillsList(LIGHT_ARMOR, SNEAK, LOCKPICKING, PICKPOCKET,
+					ALCHEMY);
+		}
+	},
 
-    BRETON {
+	BRETON {
 
-        @Override
-        public Type primarySkill() {
-            return CONJURATION;
-        }
+		@Override
+		public Type primarySkill() {
+			return CONJURATION;
+		}
 
-        @Override
-        public List<Type> favoredSkills() {
-            return skillsList(SPEECH, ALCHEMY, ILLUSION, RESTORATION, ALTERATION);
-        }
-    },
+		@Override
+		public List<Type> favoredSkills() {
+			return skillsList(SPEECH, ALCHEMY, ILLUSION, RESTORATION,
+					ALTERATION);
+		}
+	},
 
-    DUNMER {
+	DUNMER {
 
-        @Override
-        public Type primarySkill() {
-            return DESTRUCTION;
-        }
+		@Override
+		public Type primarySkill() {
+			return DESTRUCTION;
+		}
 
-        @Override
-        public List<Type> favoredSkills() {
-            return skillsList(LIGHT_ARMOR, SNEAK, ALCHEMY, ILLUSION, ALTERATION);
-        }
-    },
+		@Override
+		public List<Type> favoredSkills() {
+			return skillsList(LIGHT_ARMOR, SNEAK, ALCHEMY, ILLUSION, ALTERATION);
+		}
+	},
 
-    IMPERIAL {
+	IMPERIAL {
 
-        @Override
-        public Type primarySkill() {
-            return RESTORATION;
-        }
+		@Override
+		public Type primarySkill() {
+			return RESTORATION;
+		}
 
-        @Override
-        public List<Type> favoredSkills() {
-            return skillsList(HEAVY_ARMOR, BLOCK, ONE_HANDED, DESTRUCTION, ENCHANTING);
-        }
-    },
+		@Override
+		public List<Type> favoredSkills() {
+			return skillsList(HEAVY_ARMOR, BLOCK, ONE_HANDED, DESTRUCTION,
+					ENCHANTING);
+		}
+	},
 
-    KHAJIIT {
+	KHAJIIT {
 
-        @Override
-        public Type primarySkill() {
-            return SNEAK;
-        }
+		@Override
+		public Type primarySkill() {
+			return SNEAK;
+		}
 
-        @Override
-        public List<Type> favoredSkills() {
-            return skillsList(ONE_HANDED, ARCHERY, LOCKPICKING, PICKPOCKET, ALCHEMY);
-        }
-    },
+		@Override
+		public List<Type> favoredSkills() {
+			return skillsList(ONE_HANDED, ARCHERY, LOCKPICKING, PICKPOCKET,
+					ALCHEMY);
+		}
+	},
 
-    NORD {
+	NORD {
 
-        @Override
-        public Type primarySkill() {
-            return TWO_HANDED;
-        }
+		@Override
+		public Type primarySkill() {
+			return TWO_HANDED;
+		}
 
-        @Override
-        public List<Type> favoredSkills() {
-            return skillsList(SMITHING, BLOCK, ONE_HANDED, LIGHT_ARMOR, SPEECH);
-        }
-    },
+		@Override
+		public List<Type> favoredSkills() {
+			return skillsList(SMITHING, BLOCK, ONE_HANDED, LIGHT_ARMOR, SPEECH);
+		}
+	},
 
-    ORSIMER {
+	ORSIMER {
 
-        @Override
-        public Type primarySkill() {
-            return HEAVY_ARMOR;
-        }
+		@Override
+		public Type primarySkill() {
+			return HEAVY_ARMOR;
+		}
 
-        @Override
-        public List<Type> favoredSkills() {
-            return skillsList(SMITHING, BLOCK, TWO_HANDED, ONE_HANDED, ENCHANTING);
-        }
-    },
+		@Override
+		public List<Type> favoredSkills() {
+			return skillsList(SMITHING, BLOCK, TWO_HANDED, ONE_HANDED,
+					ENCHANTING);
+		}
+	},
 
-    REDGUARD {
+	REDGUARD {
 
-        @Override
-        public Type primarySkill() {
-            return ONE_HANDED;
-        }
+		@Override
+		public Type primarySkill() {
+			return ONE_HANDED;
+		}
 
-        @Override
-        public List<Type> favoredSkills() {
-            return skillsList(SMITHING, BLOCK, ONE_HANDED, CONJURATION, ALTERATION);
-        }
-    };
+		@Override
+		public List<Type> favoredSkills() {
+			return skillsList(SMITHING, BLOCK, ONE_HANDED, CONJURATION,
+					ALTERATION);
+		}
+	};
 
-    public static final Race HIGH_ELF = ALTMER;
-    public static final Race WOOD_ELF = BOSMER;
-    public static final Race DARK_ELF = DUNMER;
-    public static final Race ORC = ORSIMER;
+	public static final Race HIGH_ELF = ALTMER;
+	public static final Race WOOD_ELF = BOSMER;
+	public static final Race DARK_ELF = DUNMER;
+	public static final Race ORC = ORSIMER;
 
-    private static List<Type> skillsList(Type one, Type two, Type three, Type four, Type five) {
-        return Arrays.asList(new Type[] {
-                one, two, three, four, five
-        });
-    }
+	private static List<Type> skillsList(Type one, Type two, Type three,
+			Type four, Type five) {
+		return Arrays.asList(new Type[] { one, two, three, four, five });
+	}
 
-    public final SkillMap initalSkills() {
-        return SkillMap.createFor(this);
-    }
+	public abstract Type primarySkill();
 
-    public abstract Type primarySkill();
-
-    public abstract List<Type> favoredSkills();
+	public abstract List<Type> favoredSkills();
 }
