@@ -1,5 +1,7 @@
 package com.pkw.tes.skyrim.calculator.perks;
+
 import com.pkw.tes.skyrim.calculator.Character;
+
 public class Perk {
 
 	private Character character;
@@ -8,7 +10,7 @@ public class Perk {
 		this.character = character;
 	}
 
-	public void addPoint() {
+	public void addPoint() throws NoPerkPointsException {
 		character.usePerkPoint();
 	}
 }

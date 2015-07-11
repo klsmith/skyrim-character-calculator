@@ -1,5 +1,6 @@
 package com.pkw.tes.skyrim.calculator;
 
+import com.pkw.tes.skyrim.calculator.perks.NoPerkPointsException;
 import com.pkw.tes.skyrim.calculator.skills.Skill;
 import com.pkw.tes.skyrim.calculator.skills.Skill.Type;
 import com.pkw.tes.skyrim.calculator.skills.SkillMap;
@@ -65,7 +66,11 @@ public class Character {
 		return race;
 	}
 
-	public void usePerkPoint() {
-		perkPoints -= 1;
+	public void usePerkPoint() throws NoPerkPointsException {
+		if (perkPoints > 0) {
+			perkPoints -= 1;
+		} else {
+			throw new NoPerkPointsException();
+		}
 	}
 }
