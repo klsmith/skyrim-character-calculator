@@ -2,7 +2,7 @@ package com.pkw.tes.skyrim.calculator;
 
 import static com.pkw.tes.skyrim.calculator.perks.IllusionPerkType.NOVICE_ILLUSION;
 import static com.pkw.tes.skyrim.calculator.skills.Skill.Type.ILLUSION;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -35,7 +35,8 @@ public class PerkTester {
 	}
 
 	@Test
-	public void testLevelingAndSpendingPerkLeavesNoPerk() throws NoPerkPointsException {
+	public void testLevelingAndSpendingPerkLeavesNoPerk()
+			throws NoPerkPointsException {
 		character.skill(ILLUSION).addLevel(4);
 		character.skill(ILLUSION).perkTree().perk(NOVICE_ILLUSION).addPoint();
 		int actual = character.perkPoints();
@@ -44,7 +45,19 @@ public class PerkTester {
 	}
 
 	@Test(expected = NoPerkPointsException.class)
-	public void testNotLevelingAndAttemptingToSpendPerkThrowsException() throws NoPerkPointsException {
+	public void testNotLevelingAndAttemptingToSpendPerkThrowsException()
+			throws NoPerkPointsException {
 		character.skill(ILLUSION).perkTree().perk(NOVICE_ILLUSION).addPoint();
+		fail("Expected NoPerkPointsException to be thrown, but no excpetion was thrown!");
+	}
+
+	@Test
+	public void test() throws NoPerkPointsException {
+		character.skill(ILLUSION).addLevel(4);
+		character.skill(ILLUSION).perkTree().perk(NOVICE_ILLUSION).addPoint();
+		int actual = character.skill(ILLUSION).perkTree().perk(NOVICE_ILLUSION)
+				.level();
+		int expected = 1;
+		assertEquals(expected, actual);
 	}
 }

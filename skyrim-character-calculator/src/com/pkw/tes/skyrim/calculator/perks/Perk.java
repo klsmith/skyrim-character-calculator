@@ -13,4 +13,8 @@ public class Perk {
 	public void addPoint() throws NoPerkPointsException {
 		character.usePerkPoint();
 	}
+
+	public int level() {
+		return 1;
+	}
 }
